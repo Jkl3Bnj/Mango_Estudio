@@ -1,0 +1,136 @@
+
+
+/* Fuente general */
+  .body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #ffe6f0); /* De blanco a rosita */
+    color: #333;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 75px;  /* Tamaño del logo */
+    height: auto;  /* Para que no se deforme */
+    border-radius: 50%; /* Esto lo hace redondo (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra bonita */
+    margin: 10px; /* Espacio alrededor */
+  }
+  /* Navegación */
+  .nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #d94f70;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #ff7ea5;
+  }
+  
+  /* Contenido Principal */
+  .contenido {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .contenido h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .contenido p {
+    font-size: 20px;
+    color: #666;
+  }
+
+  /* Galeria */
+  .portafolio {
+    text-align: center; /* Centra el texto del título */
+    padding: 40px 0;
+    background-color: #f8f8f8;
+  }
+  
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Se adapta a diferentes tamaños de pantalla */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+  }
+  
+  .galeria img {
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Transiciones para el efecto hover */
+  }
+  
+  .galeria img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Agrega sombra alrededor de la imagen */
+  }
+ 
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+  }
+  
+  .minilogo img {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: auto;
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+  }
+  
+  footer p, footer a {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  footer a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      padding: 10px;
+    }
+    .nav {
+      margin-top: 10px;
+    }
+    .nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  
