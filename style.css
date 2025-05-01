@@ -83,8 +83,27 @@
     transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el ratón */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Agrega sombra alrededor de la imagen */
   }
- 
-  
+ /* Botón de carrito */
+ /* Botones generales */
+button, .boton-carrito {
+  background-color: #d94f70;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(217, 79, 112, 0.3);
+}
+
+/* Hover */
+button:hover, .boton-carrito:hover {
+  background-color: #ff7ea5;
+  transform: scale(1.05);
+}
+
   /* Footer */
   footer {
     padding: 20px;

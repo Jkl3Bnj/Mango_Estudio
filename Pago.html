@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pago</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
+
+  <header class="header">
+    <div class="logo">
+      <img src="/img/Logo/Logo mango.jpeg" alt="Logo" />
+    </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="carrito.html">Carrito</a>
+    </nav>
+  </header>
+
+  <section class="contenido">
+    <h1>Formulario de Pago</h1>
+    <p>Por favor, completa los datos para proceder con tu pago.</p>
+    
+    <!-- Formulario de pago -->
+    <form id="form-pago">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required />
+
+      <label for="tarjeta">Número de tarjeta:</label>
+      <input type="text" id="tarjeta" name="tarjeta" required />
+
+      <button type="submit">Pagar</button>
+    </form>
+
+    <p id="mensaje-exito" style="color: green; display: none;">¡Pago exitoso! Tu pedido ha sido procesado.</p>
+  </section>
+
+  <script>
+    // Función para procesar el pago y vaciar el carrito
+    document.getElementById('form-pago').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe realmente
+
+      // Vaciar el carrito
+      localStorage.removeItem('carrito');
+
+      // Mostrar mensaje de éxito
+      document.getElementById('mensaje-exito').style.display = 'block';
+      
+      // Opcional: Redirigir al usuario después de unos segundos
+      setTimeout(function() {
+        window.location.href = 'index.html';  // Redirige a la página principal
+      }, 3000); // Redirige después de 3 segundos
+    });
+  </script>
+
+</body>
+</html>

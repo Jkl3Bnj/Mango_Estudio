@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
+
+  <header class="header">
+    <div class="logo">
+      <img src="/img/Logo/Logo mango.jpeg" alt="Logo" />
+    </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="pago.html">Ir a Pagar</a>
+    </nav>
+  </header>
+
+  <section class="contenido">
+    <h1>Tu Carrito</h1>
+    <ul id="lista-carrito"></ul>
+    <p id="total"></p>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <a href="pago.html" class="boton-carrito"><button>Proceder al Pago</button></a>
+  </section>
+
+  <script>
+    function mostrarCarrito() {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      let lista = document.getElementById('lista-carrito');
+      let total = 0;
+      lista.innerHTML = '';
+
+      carrito.forEach((item, index) => {
+        lista.innerHTML += `<li>${item.nombre} - $${item.precio}</li>`;
+        total += item.precio;
+      });
+
+      document.getElementById('total').textContent = 'Total: $' + total;
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem('carrito');
+      mostrarCarrito();
+    }
+
+    mostrarCarrito();
+  </script>
+
+</body>
+</html>

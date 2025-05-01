@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Mango Logo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="/img/Logo/Logo mango.jpeg" alt="Logo de la tienda" />
+    </div>
+    <nav class="nav">
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="carrito.html">Carrito</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="contenido">
+    <h1>Bienvenidos a Mango</h1>
+    <p>ESLOGAN O ALGO BONITO</p>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="portafolio">
+    <h2>Nuestros Productos</h2>
+    <div class="galeria">
+      <div>
+        <img src="img/Producto/Labial.jfif" alt="Labial" />
+        <p>Labial Mate - $100</p>
+        <button onclick="agregarAlCarrito('Labial Mate', 100)">Agregar al carrito</button>
+      </div>
+      <div>
+        <img src="img/Producto/Espejo.jpg" alt="Espejo" />
+        <p>Espejo de Maquillaje - $150</p>
+        <button onclick="agregarAlCarrito('Espejo de Maquillaje', 150)">Agregar al carrito</button>
+      </div>
+      <div>
+        <img src="img/paleta.jpg" alt="Paleta de sombras" />
+        <p>Paleta de Sombras - $250</p>
+        <button onclick="agregarAlCarrito('Paleta de Sombras', 250)">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="minilogo">
+        <img src="icono.png" alt="Ícono pequeño" />
+      </div>
+      <p>&copy; 2025 Sonidos del Alma. Todos los derechos reservados.</p>
+    </div>
+    <p><a href="#contacto">Contáctanos</a></p>
+  </footer>
+
+  <script>
+    function agregarAlCarrito(producto, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre: producto, precio: precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(`Agregado: ${producto} - $${precio}`);
+    }
+  </script>
+
+</body>
+</html>
